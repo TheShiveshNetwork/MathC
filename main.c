@@ -22,6 +22,7 @@ void QuadraticCalc() {
     sol2 = (-coeffX - (coeffX^2 - 4*coeffX2*coeffX)^(1/2)) / 2*coeffX2;
 
     printf("\n[\u2713] The roots of the given quadratic equation are: %d & %d", sol1, sol2);
+    printf("\n[\u2713] Vertex of parabola made by the graph of equation: %d", -coeffX / 2*coeffX2);
 }
 
 void Setup() {
