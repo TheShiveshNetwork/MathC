@@ -1,20 +1,27 @@
 #include<stdio.h>
 #include<stdbool.h>
 
-// int reRun(bool terminate) {
-//     if (!terminate) {
-//         Setup();
-//     } else {
-//         return 0;
-//     }
-// }
 
 void SimpleCalc() {
-    printf("This is simple calc!\n");
+    printf("\n\n[+] CALCULATOR PLAYGROUND\n\n");
 }
 
 void QuadraticCalc() {
-    printf("This is quadratic calc!\n");
+    printf("\n\n[+] QUADRATIC CALCULATOR\n\n");
+
+    int coeffX2, coeffX, constCoeff;
+    int sol1, sol2;
+    printf("Write the values of a, b, c in your Quadratic Equation of type ax^2 + bx + c:\n");
+    printf("Note: First enter the value of a then b then c, separated by space (ex: 2 3 1)\n");
+    printf("Values (a b c): ");
+    scanf("%d %d %d", &coeffX2, &coeffX, &constCoeff);
+
+    printf("The given quadratic equation is: %dx^2 + (%d)x + (%d)\n", coeffX2, coeffX, constCoeff);
+
+    sol1 = (-coeffX + (coeffX^2 - 4*coeffX2*coeffX)^(1/2)) / 2*coeffX2;
+    sol2 = (-coeffX - (coeffX^2 - 4*coeffX2*coeffX)^(1/2)) / 2*coeffX2;
+
+    printf("\n[\u2713] The roots of the given quadratic equation are: %d & %d", sol1, sol2);
 }
 
 void Setup() {
@@ -35,7 +42,7 @@ void Setup() {
     }
 
     char terminateChar;
-    printf("\n[?] Terminate the program? (Press y / n) ");
+    printf("\n\n[?] Terminate the program? (Press y / n) ");
     scanf("%s", &terminateChar);
     // printf("\nTerminate: %c\n", terminateChar);
 
