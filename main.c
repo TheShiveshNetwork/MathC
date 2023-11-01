@@ -4,6 +4,26 @@
 
 void SimpleCalc() {
     printf("\n\n[+] CALCULATOR PLAYGROUND\n\n");
+
+    int num1, num2, solution;
+    char operation;
+    printf("Enter the two numbers (example: a + b): ");
+    scanf("%d %s %d", &num2, &operation, &num1);
+
+    if(operation == '+') {
+        solution = num1 + num2;
+    }
+    if(operation == '-') {
+        solution = num2 - num1;
+    }
+    if(operation == '*') {
+        solution = num1 * num2;
+    }
+    if(operation == '/') {
+        solution = num2 / num1;
+    }
+
+    printf("\n[\u2713] %d %c %d = %d", num2, operation, num1, solution);
 }
 
 void QuadraticCalc() {
