@@ -7,7 +7,7 @@ void SimpleCalc() {
 
     int num1, num2, solution;
     char operation;
-    printf("Enter the two numbers (example: a + b): ");
+    printf("Enter the two numbers calculation (example: a + b): ");
     scanf("%d %s %d", &num2, &operation, &num1);
 
     if(operation == '+') {
@@ -38,8 +38,8 @@ void QuadraticCalc() {
 
     printf("The given quadratic equation is: %dx^2 + (%d)x + (%d)\n", coeffX2, coeffX, constCoeff);
 
-    sol1 = (-coeffX + (coeffX^2 - 4*coeffX2*coeffX)^(1/2)) / 2*coeffX2;
-    sol2 = (-coeffX - (coeffX^2 - 4*coeffX2*coeffX)^(1/2)) / 2*coeffX2;
+    sol1 = (-coeffX + (coeffX^2 - 4*coeffX2*constCoeff)^(1/2)) / 2*coeffX2;
+    sol2 = (-coeffX - (coeffX^2 - 4*coeffX2*constCoeff)^(1/2)) / 2*coeffX2;
 
     printf("\n[\u2713] The roots of the given quadratic equation are: %d & %d", sol1, sol2);
     printf("\n[\u2713] Vertex of parabola made by the graph of equation: %d", -coeffX / 2*coeffX2);
