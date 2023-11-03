@@ -33,8 +33,9 @@ Your Pull Request will be reviewed and if found worthy, it will be merged.
 # Run the program
 1. Compile the code
 ```
-gcc -o main main.c
+gcc -o main main.c -lm
 ```
+Note to add -lm at the end, because we are using math library functions.
 2. Run the output file
 ```
 ./main
