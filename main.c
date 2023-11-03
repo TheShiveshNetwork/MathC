@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdbool.h>
+#include<math.h>
 
 
 void SimpleCalc() {
@@ -29,20 +30,41 @@ void SimpleCalc() {
 void QuadraticCalc() {
     printf("\n\n[+] QUADRATIC CALCULATOR\n\n");
 
-    int coeffX2, coeffX, constCoeff;
-    int sol1, sol2;
+    double coeffX2, coeffX, constCoeff;
+    double discriminant, sol1, sol2, realPart, imagPart;
     printf("Write the values of a, b, c in your Quadratic Equation of type ax^2 + bx + c:\n");
     printf("Note: First enter the value of a then b then c, separated by space (ex: 2 3 1)\n");
     printf("Values (a b c): ");
-    scanf("%d %d %d", &coeffX2, &coeffX, &constCoeff);
+    scanf("%lf %lf %lf", &coeffX2, &coeffX, &constCoeff);
 
-    printf("The given quadratic equation is: %dx^2 + (%d)x + (%d)\n", coeffX2, coeffX, constCoeff);
+    printf("The given quadratic equation is: %lfx^2 + (%dlf)x + (%lf)\n", coeffX2, coeffX, constCoeff);
 
-    sol1 = (-coeffX + (coeffX^2 - 4*coeffX2*constCoeff)^(1/2)) / 2*coeffX2;
-    sol2 = (-coeffX - (coeffX^2 - 4*coeffX2*constCoeff)^(1/2)) / 2*coeffX2;
+    // sol1 = (-coeffX + sqrt(coeffX^2 - 4*coeffX2*constCoeff)) / 2*coeffX2;
+    // sol2 = (-coeffX - sqrt(coeffX^2 - 4*coeffX2*constCoeff)) / 2*coeffX2;
+    discriminant = coeffX * coeffX - 4*constCoeff*coeffX2;
 
-    printf("\n[\u2713] The roots of the given quadratic equation are: %d & %d", sol1, sol2);
-    printf("\n[\u2713] Vertex of parabola made by the graph of equation: %d", -coeffX / 2*coeffX2);
+    // condition for real and different roots
+    if (discriminant > 0) {
+        sol1 = (-coeffX + sqrt(discriminant)) / (2 * coeffX2);
+        sol2 = (-coeffX - sqrt(discriminant)) / (2 * coeffX2);
+
+        printf("\n[\u2713] The roots of the given quadratic equation are: %.2lf & %.2lf", sol1, sol2);
+    }
+
+    // condition for real and equal roots
+    else if (discriminant == 0) {
+        sol1 = -coeffX / (2 * coeffX2);
+        printf("\n[\u2713] root1 = root2 = %.2lf;", sol1);
+    }
+
+    // if roots are not real
+    else {
+        realPart = -coeffX / (2 * coeffX2);
+        imagPart = sqrt(-discriminant) / (2 * coeffX2);
+        printf("\n[\u2713] root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", realPart, imagPart, realPart, imagPart);
+    }
+
+    printf("\n[\u2713] Vertex of parabola made by the graph of equation: (%.2lf, %.2lf)", -coeffX / 2*coeffX2, constCoeff - (coeffX * coeffX / 4 * coeffX2));
 }
 
 void Setup() {
