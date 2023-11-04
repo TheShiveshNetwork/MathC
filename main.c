@@ -64,7 +64,10 @@ void QuadraticCalc() {
         printf("\n[\u2713] root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", realPart, imagPart, realPart, imagPart);
     }
 
-    printf("\n[\u2713] Vertex of parabola made by the graph of equation: (%.2lf, %.2lf)", -coeffX / 2*coeffX2, constCoeff - (coeffX * coeffX / 4 * coeffX2));
+    double x = -((double) coeffX / (double) (2 * coeffX2));
+    double y = (double) constCoeff -((double) (coeffX * coeffX) / (double) (4 * coeffX2));
+
+    printf("\n[\u2713] Vertex of parabola made by the graph of equation: (%.2lf, %.2lf)", x, y);
 }
 
 void Setup() {
