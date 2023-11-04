@@ -39,8 +39,6 @@ void QuadraticCalc() {
 
     printf("The given quadratic equation is: %lfx^2 + (%dlf)x + (%lf)\n", coeffX2, coeffX, constCoeff);
 
-    // sol1 = (-coeffX + sqrt(coeffX^2 - 4*coeffX2*constCoeff)) / 2*coeffX2;
-    // sol2 = (-coeffX - sqrt(coeffX^2 - 4*coeffX2*constCoeff)) / 2*coeffX2;
     discriminant = coeffX * coeffX - 4*constCoeff*coeffX2;
 
     // condition for real and different roots
@@ -70,11 +68,23 @@ void QuadraticCalc() {
     printf("\n[\u2713] Vertex of parabola made by the graph of equation: (%.2lf, %.2lf)", x, y);
 }
 
+void DeterminantCalc() {
+    int i, option;
+    printf("\n\n[+] DETERMINANT CALCULATOR\n\n");
+    printf("\n(Press 1) 2 x 2\n(Press 2) 3 x 3");
+    scanf("%d", &option);
+
+    int sol;
+
+    printf("\n[\u2713] The value of the determinant is: %d", sol);
+}
+
 void Setup() {
     int number_fun;
     printf("[?] What do you want to calculate?\n");
     printf("(Press 1) Simple Mathematics\n");
-    printf("(Press 2) Solve Quadratic Equation\n\n");
+    printf("(Press 2) Solve Quadratic Equation\n");
+    printf("(Press 3) Solve Determinants\n\n");
 
     printf("Enter a number from the above list: ");
     scanf("%d", &number_fun);
@@ -85,6 +95,9 @@ void Setup() {
     }
     if (number_fun == 2) {
         QuadraticCalc();
+    }
+    if (number_fun == 3) {
+        DeterminantCalc();
     }
 
     char terminateChar;
