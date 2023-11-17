@@ -70,13 +70,23 @@ void QuadraticCalc() {
 
 void DeterminantCalc() {
     int i, option;
+    float sol;
     printf("\n\n[+] DETERMINANT CALCULATOR\n\n");
     printf("\n(Press 1) 2 x 2\n(Press 2) 3 x 3");
     scanf("%d", &option);
 
-    int sol;
+    double determinant[2][2];
 
-    printf("\n[\u2713] The value of the determinant is: %d", sol);
+    if (option == 1) {
+        printf("\n\nEnter the row 1: ");
+        scanf("%.2f", &determinant);
+        double det = determinant[0][0] * determinant[1][1] - determinant[0][1]*determinant[1][0];
+        printf("\n\n%lf", det);
+        // sol = determinant;
+    }
+
+
+    printf("\n[\u2713] The value of the determinant is: %f", sol);
 }
 
 void Setup() {
