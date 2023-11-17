@@ -75,18 +75,23 @@ void DeterminantCalc() {
     printf("\n(Press 1) 2 x 2\n(Press 2) 3 x 3");
     scanf("%d", &option);
 
-    double determinant[2][2];
+    int determinant[2][2];
 
     if (option == 1) {
         printf("\n\nEnter the row 1: ");
-        scanf("%.2f", &determinant);
-        double det = determinant[0][0] * determinant[1][1] - determinant[0][1]*determinant[1][0];
-        printf("\n\n%lf", det);
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                scanf("%d", &determinant[i][j]);
+                printf("%d\n", determinant[i][j]);
+            }
+        }
+        int sol = determinant[0][0] * determinant[1][1] - determinant[0][1]*determinant[1][0];
+        // printf("\n\n%lf", det);
         // sol = determinant;
     }
 
 
-    printf("\n[\u2713] The value of the determinant is: %f", sol);
+    printf("\n[\u2713] The value of the determinant is: %d", sol);
 }
 
 void Setup() {
