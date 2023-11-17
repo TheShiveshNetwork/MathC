@@ -72,26 +72,35 @@ void DeterminantCalc() {
     int i, option;
     float sol;
     printf("\n\n[+] DETERMINANT CALCULATOR\n\n");
-    printf("\n(Press 1) 2 x 2\n(Press 2) 3 x 3");
+    printf("\n(Press 1) 2 x 2\n(Press 2) 3 x 3\n\n");
+    printf("Enter a number from the above list: ");
     scanf("%d", &option);
 
-    int determinant[2][2];
-
     if (option == 1) {
-        printf("\n\nEnter the row 1: ");
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
+        int determinant[2][2];
+
+        for (int i = 0; i < 2; ++i) {
+            for (int j = 0; j < 2; ++j) {
+                printf("\nEnter the element at row %d and column %d: ", i, j);
                 scanf("%d", &determinant[i][j]);
-                printf("%d\n", determinant[i][j]);
             }
         }
-        int sol = determinant[0][0] * determinant[1][1] - determinant[0][1]*determinant[1][0];
-        // printf("\n\n%lf", det);
-        // sol = determinant;
+        sol = determinant[0][0] * determinant[1][1] - determinant[0][1]*determinant[1][0];
+    }
+    else if (option == 2) {
+        int determinant[3][3];
+
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                printf("\nEnter the element at row %d and column %d: ", i, j);
+                scanf("%d", &determinant[i][j]);
+            }
+        }
+        sol = determinant[0][0] * determinant[1][1] - determinant[0][1]*determinant[1][0];
     }
 
 
-    printf("\n[\u2713] The value of the determinant is: %d", sol);
+    printf("\n[\u2713] The value of the determinant is: %.2lf", sol);
 }
 
 void Setup() {
