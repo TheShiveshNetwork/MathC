@@ -96,7 +96,9 @@ void DeterminantCalc() {
                 scanf("%d", &determinant[i][j]);
             }
         }
-        sol = determinant[0][0] * determinant[1][1] - determinant[0][1]*determinant[1][0];
+        sol = determinant[0][0] * (determinant[1][1] * determinant[2][2] - determinant[1][2] * determinant[2][1])
+                - determinant[0][1] * (determinant[1][0] * determinant[2][2] - determinant[1][2] * determinant[2][0])
+                + determinant[0][2] * (determinant[1][0] * determinant[2][1] - determinant[1][1] * determinant[2][0]);
     }
 
 
