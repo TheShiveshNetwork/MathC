@@ -115,15 +115,16 @@ void Setup() {
     printf("Enter a number from the above list: ");
     scanf("%d", &number_fun);
 
-    // printf("%d\n", number_fun);
-    if (number_fun == 1) {
+    switch (number_fun) {
+    case 1:
         SimpleCalc();
-    }
-    if (number_fun == 2) {
+        break;
+    case 2:
         QuadraticCalc();
-    }
-    if (number_fun == 3) {
+        break;
+    case 3:
         DeterminantCalc();
+        break;
     }
 
     char terminateChar;
