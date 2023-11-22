@@ -105,6 +105,8 @@ void DeterminantCalc() {
     printf("\n[\u2713] The value of the determinant is: %.2lf", sol);
 }
 
+void DerivativeCalc () {}
+
 void Setup() {
     int number_fun;
     printf("[?] What do you want to calculate?\n");
